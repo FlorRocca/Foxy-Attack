@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" translate="yes">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foxy Attack</title> 
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body> 
+    <section id="seleccionar-mascota">
+        <h1 class ="titulo">FOXY ATTACK!</h1>
+        <h2 class ="subtitulo">ELIGE TU MASCOTA</h2>
+        <div id="contenedor-tarjetas" class="tarjetas"></div>
+        <button class="boton-seleccionar-mascota" id="boton-mascota">SELECCIONAR</button>
+    </section>
+
+    <section id="ver-mapa">
+        <h1 class ="titulo">FOXY ATTACK!</h1>
+        <h2 class ="subtitulo">RECORRE EL MAPA CON TU FOXY</h2>
+        <canvas id="mapa"></canvas>
+            <button  
+            ontouchend ="detenerMovimiento()" 
+            onmouseup = "detenerMovimiento()" 
+            onmousedown = "moverArriba()"
+            ontouchstart ="moverArriba()">▲
+            </button>
+            <div>
+                <button  
+                ontouchend ="detenerMovimiento()"
+                onmouseup = "detenerMovimiento()"
+                onmousedown ="moverIzquierda()"
+                ontouchstart ="moverIzquierda()">◄
+                </button>
+                <button 
+                ontouchend ="detenerMovimiento()" 
+                onmouseup = "detenerMovimiento()"
+                onmousedown = "moverAbajo()"
+                ontouchstart ="moverAbajo()">▼
+                </button>
+                <button 
+                ontouchend ="detenerMovimiento()" 
+                onmouseup = "detenerMovimiento()"
+                onmousedown ="moverDerecha()"
+                ontouchstart ="moverDerecha()">►
+                </button>
+            </div>
+    </section>
+
+    <section id="seleccionar-ataque">
+        <h1 class ="titulo">FOXY ATTACK!</h1>
+        <h2 class ="subtitulo">ELIGE TUS ATAQUES</h2>
+        <div  id='contenedor-ataques' class="tarjetas-ataques">
+        </div>
+        <div id="mensajes">
+            <p id="resultado"></p>
+            <section id="reiniciar">
+                    <button id="boton-reiniciar">REINICIAR</button>
+            </section>
+        </div> 
+        <div class="ataques">
+            <div class="ataques-jugador">
+                <p id="vidas-jugador">0</p> 
+                <p id="mascota-jugador"></p>
+                <div id="ataques-del-jugador"></div>
+            </div>
+            <div class="ataques-enemigo">
+                <p id="vidas-enemigo">0</p>
+                <p id="mascota-enemigo"></p>
+                <div id="ataques-del-enemigo"></div>
+            </div>
+        </div>
+    </section>
+    <script src= "./js/foxyattack.js"></script>
+</body>
+</html>
